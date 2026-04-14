@@ -1,0 +1,14 @@
+[project]
+name = "voicecontext-ai"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "faster-whisper>=1.2.1",
+    "piper-tts>=1.4.2",
+    "pynput>=1.8.1",
+    "scipy>=1.17.1",
+    "sounddevice>=0.5.5",
+    "soundfile>=0.13.1",
+]

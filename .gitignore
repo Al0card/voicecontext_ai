@@ -1,0 +1,12 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+audios
+en_US-lessac-medium.onnx
+en_US-lessac-medium.onnx.json
+# Virtual environments
+.venv
