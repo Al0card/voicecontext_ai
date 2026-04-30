@@ -12,6 +12,9 @@ class Transcriber:
         self.fs = 16000
         self.channels = 1
         self.chunk_size = 3200
+        self.full_text = ""
+        self.typing_delay = 0.05
+        
         
     def open_stream(self):
          return sd.InputStream(samplerate=self.fs, channels=self.channels, dtype='float32')
@@ -24,10 +27,13 @@ class Transcriber:
             segments, info = self.model.transcribe(tmp.name, beam_size=5, language="en")
             # has_output = False
             for segment in segments:
-                print(segment.text)
+                self.full_text += segment.text
                 # has_output = True
             # if not has_output:
                 # print("Nothing was recorded")
+            
             self.audio_chunks = []
             self.audio_data = None
+        return self.full_text
+      
     
